@@ -9,6 +9,7 @@ export class ServersComponent implements OnInit {
   allowAddNewServer = false;
   serverStatusText = "No server exist!";
   serverName = '';
+  serverColor = "#ff0000";
 
   constructor() {
     setTimeout(() => {
@@ -20,8 +21,8 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
-    this.allowAddNewServer = false;
-    this.serverStatusText = "Server was created";
+    // this.allowAddNewServer = false;
+    this.serverStatusText = "Server was created, Name is " + this.serverName;
   }
 
   onUpdateServerName(event: Event) {
