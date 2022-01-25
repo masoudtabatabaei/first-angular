@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit()">
+  <input type="text"
+         name="todo"
+         placeholder="Enter a subject"
+         class="form-control"
+         autocomplete="off"
+         [(ngModel)]="title"/>
+  <button type="submit" class="btn btn-primary mt-2">Create</button>
+</form>
+<p class="mt-2" *ngIf="!checkAnyItemExists">There aren't any item in list!</p>
+<br/>
+<div class="todoList" *ngFor="let todoItem of todos">
+  <p>{{ todoItem }}</p>
+</div>
