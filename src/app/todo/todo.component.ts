@@ -10,6 +10,7 @@ export class TodoComponent implements OnInit {
   title: string = '';
   checkAnyItemExists: boolean = false;
   todos : string[] = this.todoStorage.showList();
+  totalCount: number = 0;
 
   constructor(private todoStorage: TodoStorageService) { }
 
@@ -21,6 +22,7 @@ export class TodoComponent implements OnInit {
       this.addToList(this.title);
       this.title = '';
       this.checkAnyItemExists = this.todoStorage.checkAnyItemExists();
+      this.totalCount += 1;
     } else {
       alert("Please fill subject field");
     }
