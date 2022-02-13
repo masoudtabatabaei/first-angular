@@ -9,26 +9,42 @@ import { TodoStorageService } from '../todo-storage.service';
 export class TodoComponent implements OnInit {
   title: string = '';
   checkAnyItemExists: boolean = false;
-  todos : string[] = this.todoStorage.showList();
-  totalCount: number = 0;
+  todos: string[] = [];
 
-  constructor(private todoStorage: TodoStorageService) { }
+  addedItemsCount = 0;
+
+  constructor(private todoStorage: TodoStorageService) {
+  }
 
   ngOnInit(): void {
+    this.todoStorage.todos.asObservable().subscribe(items => {
+      this.todos = items;
+    });
+
+    setTimeout(() => {
+      this.todoStorage.itemsHistory.asObservable().subscribe(items => {
+        console.log('history items');
+        console.log(items);
+      });
+    }, 10000);
+
+    this.todoStorage.itemAddEvent.asObservable().subscribe(() => {
+      this.addedItemsCount += 1;
+    });
   }
 
   onSubmit() {
     if (this.title.trim() !== '') {
       this.addToList(this.title);
       this.title = '';
-      this.checkAnyItemExists = this.todoStorage.checkAnyItemExists();
-      this.totalCount += 1;
     } else {
-      alert("Please fill subject field");
+      alert('Please fill subject field');
     }
   }
 
-  addToList(todo:string){
+  addToList(todo: string) {
     this.todoStorage.addToList(todo);
+    this.todoStorage.itemAddEvent.next(true);
+    this.todoStorage.itemsHistory.next(todo);
   }
 }

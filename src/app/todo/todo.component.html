@@ -7,9 +7,12 @@
          [(ngModel)]="title"/>
   <button type="submit" class="btn btn-primary mt-2">Create</button>
 </form>
-<p class="mt-2" *ngIf="!checkAnyItemExists">There aren't any item in list!</p>
-<div class="mt-2 mb-2" *ngIf="totalCount">Total Items : {{ totalCount }}</div>
+<p class="mt-2" *ngIf="todos.length === 0">There aren't any item in list!</p>
+<div class="mt-2 mb-2" *ngIf="todos.length">Total Items : {{ todos.length }}</div>
 <br/>
 <div class="todoList" *ngFor="let todoItem of todos">
   <p>{{ todoItem }}</p>
 </div>
+
+
+<h4>Added items {{ addedItemsCount }}</h4>

@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoStorageService {
-  todos: string[] = [];
+
+  todos: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
+
+  itemsHistory: ReplaySubject<string> = new ReplaySubject(20);
+
+  itemAddEvent: Subject<boolean> = new Subject();
+
   constructor() { }
 
   addToList(todoItem: string) {
-    this.todos.push(todoItem);
+    const items = this.todos.getValue();
+    items.push(todoItem);
+    this.todos.next(items);
   }
 
-  showList() {
-    return this.todos;
-  }
-
-  checkAnyItemExists() {
-    return this.todos.length > 0 ? true : false;
-  }
 }
