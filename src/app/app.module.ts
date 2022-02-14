@@ -11,6 +11,7 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { UserComponent } from './user/user.component';
 import { TodoComponent } from './todo/todo.component';
 import { TodoStorageService } from './todo-storage.service';
+import { BindComponent } from './bind/bind.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TodoStorageService } from './todo-storage.service';
     WarningAlertComponent,
     SuccessAlertComponent,
     UserComponent,
-    TodoComponent
+    TodoComponent,
+    BindComponent
   ],
   imports: [
     BrowserModule,

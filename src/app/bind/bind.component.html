@@ -1,0 +1,9 @@
+<div>
+  <input type="text"
+         placeholder="Enter anything"
+         [disabled]="disabled" [value]="name" (input)="setName($event)">
+
+  <br>
+  <button class="btn" (click)="clearName()">Send</button>
+  <p>I am <span style="font-weight: bold">{{ name }}</span></p>
+</div>
