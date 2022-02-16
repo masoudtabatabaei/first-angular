@@ -1,7 +1,11 @@
 <div>
+<!--  <input type="text"-->
+<!--         placeholder="Enter anything"-->
+<!--         [disabled]="disabled" [value]="name" (input)="setName($event)">-->
+
   <input type="text"
          placeholder="Enter anything"
-         [disabled]="disabled" [value]="name" (input)="setName($event)">
+         [(ngModel)]="name">
 
   <br>
   <button class="btn" (click)="clearName()">Send</button>

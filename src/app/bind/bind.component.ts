@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BindComponent implements OnInit {
   disabled = false;
-  name = "Masoud";
+  name = "Masoud t10";
   constructor() { }
 
   ngOnInit(): void {
