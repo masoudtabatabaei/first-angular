@@ -12,6 +12,7 @@ import { UserComponent } from './user/user.component';
 import { TodoComponent } from './todo/todo.component';
 import { TodoStorageService } from './todo-storage.service';
 import { BindComponent } from './bind/bind.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BindComponent } from './bind/bind.component';
     SuccessAlertComponent,
     UserComponent,
     TodoComponent,
-    BindComponent
+    BindComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
