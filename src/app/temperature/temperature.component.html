@@ -1,0 +1,20 @@
+<hr>
+<div>
+  <h4>Celsius to Fahrenheit:</h4>
+  <label>
+    <span>Celsius: &nbsp;</span>
+    <input type="number" [(ngModel)]="celsius" />
+    &nbsp; Fahrenheit: <span style="font-weight: bold">{{ celsius | tempConvertor:'F' }}</span>
+  </label>
+</div>
+
+<div>
+  <h4>Fahrenheit to Celsius:</h4>
+  <label>
+    <span>Fahrenheit: &nbsp;</span>
+    <input type="number" [(ngModel)]="fahrenheit" />
+    &nbsp; Celsius: <span style="font-weight: bold">{{ fahrenheit | tempConvertor:'C' }}</span>
+  </label>
+</div>
+<br/>
+<hr/>
