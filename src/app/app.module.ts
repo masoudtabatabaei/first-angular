@@ -14,6 +14,7 @@ import { TodoStorageService } from './todo-storage.service';
 import { BindComponent } from './bind/bind.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { DateComponent } from './date/date.component';
+import { TempConvertorPipe } from './tempConvertorPipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DateComponent } from './date/date.component';
     TodoComponent,
     BindComponent,
     CustomerListComponent,
-    DateComponent
+    DateComponent,
+    TempConvertorPipe
   ],
   imports: [
     BrowserModule,
