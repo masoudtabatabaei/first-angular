@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'first-angular';
+  messageType = 'failure';
+
+  showMessage(type:string) {
+    if (type === "success") {
+      return "Greeting! you win";
+    } else {
+      return "Sorry! you loss";
+    }
+  }
 }

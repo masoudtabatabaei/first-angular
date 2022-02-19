@@ -16,6 +16,7 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { DateComponent } from './date/date.component';
 import { TempConvertorPipe } from './tempConvertorPipe';
 import { TemperatureComponent } from './temperature/temperature.component';
+import { InputOutputComponent } from './input-output/input-output.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TemperatureComponent } from './temperature/temperature.component';
     CustomerListComponent,
     DateComponent,
     TempConvertorPipe,
-    TemperatureComponent
+    TemperatureComponent,
+    InputOutputComponent
   ],
   imports: [
     BrowserModule,
