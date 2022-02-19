@@ -17,6 +17,7 @@ import { DateComponent } from './date/date.component';
 import { TempConvertorPipe } from './tempConvertorPipe';
 import { TemperatureComponent } from './temperature/temperature.component';
 import { InputOutputComponent } from './input-output/input-output.component';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { InputOutputComponent } from './input-output/input-output.component';
     DateComponent,
     TempConvertorPipe,
     TemperatureComponent,
-    InputOutputComponent
+    InputOutputComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
