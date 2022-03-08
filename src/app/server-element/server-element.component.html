@@ -1,0 +1,7 @@
+<div class="panel panel-default">
+  <div class="panel-heading">{{ serverElement.name }}</div>
+  <div class="panel-body">
+    <strong *ngIf="serverElement.type == 'server'" style="color: red">{{ serverElement.content }}</strong>
+    <span *ngIf="serverElement.type == 'blueprint'" style="color: blue; font-style: italic">{{ serverElement.content }}</span>
+  </div>
+</div>
