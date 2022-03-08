@@ -6,40 +6,16 @@
 <body>
   <div class="container">
     <h3 class="mt-5">This is {{ title }}</h3>
-<!--    <hr>-->
-<!--    <app-servers></app-servers>-->
-<!--    <hr>-->
-<!--    <ol>-->
-<!--      <li>Create two new Components WarningAlertComponent and SuccessAlertComponent (manualy or with CLI)</li>-->
-<!--      <li>Output these beneath each other in the AppComponent</li>-->
-<!--      <li>Output a Warning or Success messages</li>-->
-<!--      <li>Style the Components appropriately (correct color for warning and success messages)</li>-->
-<!--    </ol>-->
-<!--    <hr>-->
-<!--    <app-warning-alert></app-warning-alert>-->
-<!--    <app-success-alert></app-success-alert>-->
-<!--    <app-user></app-user>-->
-<!--    <app-todo></app-todo>-->
-    <app-bind></app-bind>
-    <hr/>
-    <app-customer-list></app-customer-list>
-    <!-- date component -->
-    <app-date></app-date>
-    <!-- temp component -->
-    <app-temperature></app-temperature>
-    <!-- input-output component -->
-    <div>
-      <app-input-output [message]="showMessage(messageType)" [messageType]="messageType"></app-input-output>
-    </div>
-    <!-- counter component -->
-    <div>
-      <h5>Click on below buttons and see the result</h5>
-      <app-counter [counter]="counter"></app-counter>
-      <button class="btn btn-inc" (click)="increment()"> + </button>
-      <button class="btn btn-dec" (click)="decrement()"> - </button>
-      &nbsp;&nbsp;<span *ngIf="checkLimit">{{ checkLimitMessage }}</span>
-    </div>
+    <app-cockpit (addedItemEvent)="addNewItem($event)"></app-cockpit>
     <br/>
+    <div class="row">
+      <div class="col-sm-12">
+        <app-server-element
+          *ngFor="let serverElement of serverElements"
+          [serverElement]="serverElement">
+        </app-server-element>
+      </div>
+    </div>
   </div>
 </body>
 </html>

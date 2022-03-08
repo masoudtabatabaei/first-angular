@@ -4,37 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ServerComponent } from './server/server.component';
-import { ServersComponent } from './servers/servers.component';
-import { WarningAlertComponent } from './warning-alert/warning-alert.component';
-import { SuccessAlertComponent } from './success-alert/success-alert.component';
-import { UserComponent } from './user/user.component';
-import { TodoComponent } from './todo/todo.component';
-import { TodoStorageService } from './todo-storage.service';
-import { BindComponent } from './bind/bind.component';
-import { CustomerListComponent } from './customer-list/customer-list.component';
-import { DateComponent } from './date/date.component';
-import { TempConvertorPipe } from './tempConvertorPipe';
-import { TemperatureComponent } from './temperature/temperature.component';
-import { InputOutputComponent } from './input-output/input-output.component';
-import { CounterComponent } from './counter/counter.component';
+import { ServerElementComponent } from './server-element/server-element.component';
+import { CockpitComponent } from './cockpit/cockpit.component';
 
 @NgModule({
   declarations: [
-    AppComponent ,
-    ServerComponent,
-    ServersComponent,
-    WarningAlertComponent,
-    SuccessAlertComponent,
-    UserComponent,
-    TodoComponent,
-    BindComponent,
-    CustomerListComponent,
-    DateComponent,
-    TempConvertorPipe,
-    TemperatureComponent,
-    InputOutputComponent,
-    CounterComponent
+    AppComponent,
+    ServerElementComponent,
+    CockpitComponent
   ],
   imports: [
     BrowserModule,
