@@ -24,6 +24,8 @@ export class CockpitComponent implements OnInit {
       name: this.serverName ,
       content: this.serverContent
     });
+
+    this.clearInputsValue();
   }
 
   onAddServer() {
@@ -32,5 +34,12 @@ export class CockpitComponent implements OnInit {
       name: this.serverName ,
       content: this.serverContent
     });
+
+    this.clearInputsValue();
+  }
+
+  clearInputsValue() {
+    this.serverContent = '';
+    this.serverName = '';
   }
 }
