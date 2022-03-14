@@ -9,6 +9,7 @@ import { ServerElementModel } from '../_models/serverElement.model';
 export class CockpitComponent implements OnInit {
   serverName = '';
   serverContent = '';
+  isDisableButton = true;
 
   @Output()
   addedItemEvent:EventEmitter<ServerElementModel> = new EventEmitter<ServerElementModel>();
@@ -16,6 +17,14 @@ export class CockpitComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  checkInputValueChange() {
+    if (this.serverName.trim() !== "" && this.serverContent.trim() !== "") {
+      this.isDisableButton = false;
+    } else {
+      this.isDisableButton = true;
+    }
   }
 
   onAddBlueprint() {

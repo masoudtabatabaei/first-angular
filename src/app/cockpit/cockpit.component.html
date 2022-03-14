@@ -2,13 +2,25 @@
 <form>
   <div>
     <label for="name">Server Name</label>
-    <input type="text" id="name" class="form-control" name="name" autocomplete="off" [(ngModel)]="serverName">
+    <input type="text"
+           id="name"
+           class="form-control"
+           name="name"
+           autocomplete="off"
+           [(ngModel)]="serverName"
+           (ngModelChange)="checkInputValueChange()">
   </div>
   <div>
     <label for="content">Server Content</label>
-    <input type="text" id="content" class="form-control" name="content" autocomplete="off" [(ngModel)]="serverContent">
+    <input type="text"
+           id="content"
+           class="form-control"
+           name="content"
+           autocomplete="off"
+           [(ngModel)]="serverContent"
+          (ngModelChange)="checkInputValueChange()">
   </div>
   <br/>
-  <button class="btn btn-primary mr-6" (click)="onAddServer()">Add New Server</button>
-  <button class="btn btn-primary mr-6" (click)="onAddBlueprint()">Add Server Blueprint</button>
+  <button class="btn btn-primary mr-6" (click)="onAddServer()" [disabled]="isDisableButton">Add New Server</button>
+  <button class="btn btn-primary mr-6" (click)="onAddBlueprint()" [disabled]="isDisableButton">Add Server Blueprint</button>
 </form>
